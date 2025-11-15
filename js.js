@@ -90,9 +90,9 @@ switch (color) {
 }
 
 // 5. Створіть змінні для зберігання двох чисел та оператора (як у списку select). Виконайте відповідну операцію та виведіть результат. У випадку ділення на нуль — виведіть попередження.
-const number1 = 2;
-const number2 = 4;
-const sign = "*"
+const number1 = Number(prompt("Enter a number"));
+const number2 = Number(prompt("Enter a second number"));
+const sign = prompt("Enter a sign (*, +, -, /)");
 
 let result;
 
@@ -104,11 +104,18 @@ switch(sign) {
         result = (number1 - number2);
         break;
     case "/":
-        result = (number1 / number2);
+        if (number2 === 0) {
+            result = "Cant divide by 0"
+        }
+        else {
+            result = (number1 / number2);
+        }
         break;
     case "*":
         result = (number1 * number2);
         break;
+    default:
+        console.log("Enter a opertion sign (*, +, -, /)");  
 }
 
 console.log(result);
